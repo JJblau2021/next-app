@@ -1,7 +1,6 @@
+import Image from "next/image";
 import "./globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import Link from "next/link";
 
 export const metadata = {
   title: "Create Next App",
@@ -15,7 +14,37 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        <header className="fixed top-0 flex h-16 w-full items-center bg-white bg-opacity-0 p-4 hover:bg-opacity-80 hover:shadow-md">
+          <div className="flex items-center">
+            <Image
+              width={32}
+              height={32}
+              alt="avatar"
+              src="https://avatars.githubusercontent.com/u/84095503?v=4"
+              className="mr-4 rounded-full"
+            />
+            <Link className="text-2xl font-bold uppercase" href="/">
+              jjblau2021
+            </Link>
+          </div>
+          <nav className="ml-auto flex gap-4">
+            <Link href="/">Home</Link>
+            <Link href="/bookmarks">Bookmarks</Link>
+          </nav>
+        </header>
+        <main className="main h-full w-full overflow-auto p-20 pt-24">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
