@@ -2,18 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Header() {
-  window.addEventListener("scroll", (e) => {
-    const scrollTop = (e.target as Document).documentElement.scrollTop;
-    if (scrollTop > 64) {
-      document.getElementById("header")?.classList.add("bg-opacity-80");
-      document.getElementById("header")?.classList.add("shadow-md");
-    } else {
-      document.getElementById("header")?.classList.remove("bg-opacity-80");
-      document.getElementById("header")?.classList.remove("shadow-md");
-    }
-  });
+  useEffect(() => {
+    window.addEventListener("scroll", (e) => {
+      const scrollTop = (e.target as Document).documentElement.scrollTop;
+      if (scrollTop > 64) {
+        document.getElementById("header")?.classList.add("bg-opacity-80");
+        document.getElementById("header")?.classList.add("shadow-md");
+      } else {
+        document.getElementById("header")?.classList.remove("bg-opacity-80");
+        document.getElementById("header")?.classList.remove("shadow-md");
+      }
+    });
+  }, []);
   return (
     <header
       id="header"
