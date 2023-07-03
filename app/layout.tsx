@@ -23,7 +23,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
-        <main className="main p-20 pt-24">{children}</main>
+        <main className="main h-[100vh] w-[100vw] p-20 pt-24">{children}</main>
       </body>
     </html>
   );
