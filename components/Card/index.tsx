@@ -11,20 +11,18 @@ export default function Card({ title, cover, url }: Props) {
     <a
       href={url}
       target="_blank"
-      className={`relative flex h-24 w-40 items-center justify-center overflow-hidden rounded-md  bg-[#008C5E] p-3 hover:bg-[#3BA75C] active:bg-[#00715F]`}
+      className="card-bg-btn inline-flex h-16 w-[190px] items-center rounded-2xl bg-white bg-opacity-80 p-4 shadow-md"
     >
-      <h5 className="overflow-hidden text-ellipsis whitespace-nowrap">
+      <Image
+        className="shrink-0 rounded-full"
+        src={cover || ""}
+        alt=""
+        width={32}
+        height={32}
+      />
+      <h5 className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap px-4 font-semibold">
         {title}
       </h5>
-      {cover && (
-        <Image
-          className="absolute bottom-0 right-0"
-          src={cover}
-          alt=""
-          width={20}
-          height={20}
-        />
-      )}
     </a>
   );
 }
