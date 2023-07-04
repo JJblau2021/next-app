@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Image from "next/image";
 
 type Props = {
@@ -5,14 +6,24 @@ type Props = {
   cover?: string;
   url?: string;
   id: string;
+  type?: "primary" | "secondary";
 };
 
-export default function Card({ title, cover, url, id }: Props) {
+export default function Card({
+  title,
+  cover,
+  url,
+  id,
+  type = url ? "primary" : "secondary",
+}: Props) {
   return (
     <a
       href={url}
       target="_blank"
-      className="card-bg-btn inline-flex h-16 w-[190px] items-center rounded-2xl bg-white bg-opacity-80 p-4 shadow-md"
+      className={clsx(
+        "card-btn inline-flex h-16 w-[190px] items-center rounded-2xl bg-white bg-opacity-80 p-4 shadow-md",
+        `card-bg-${type}`
+      )}
       id={id}
     >
       <lord-icon

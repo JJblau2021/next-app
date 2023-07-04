@@ -40,6 +40,10 @@ body::before {
   --primary: var(--hue) 39% 17%;
   --primary-alt: var(--hue) 39% 37%;
   --primary-light: var(--hue) 39% 47%;
+  --secondary-hue: 42;
+  --secondary: var(--secondary-hue) 86% 63%;
+  --secondary-alt: var(--secondary-hue) 86% 53%;
+  --secondary-light: var(--secondary-hue) 86% 63%;
 }
 
 .text-primary {
@@ -63,14 +67,25 @@ body::before {
   @apply bg-white bg-opacity-40;
 }
 
-.card-bg-btn:hover {
+.card-btn:active {
+  transform: translateY(2px);
+  @apply shadow-transparent;
+}
+
+.card-bg-primary:hover {
   background-color: hsl(var(--primary-light) / 80%);
 }
 
-.card-bg-btn:active {
+.card-bg-primary:active {
   background-color: hsl(var(--primary-alt) / 80%);
-  transform: translateY(2px);
-  @apply shadow-transparent;
+}
+
+.card-bg-secondary:hover {
+  background-color: hsl(var(--secondary-light) / 80%);
+}
+
+.card-bg-secondary:active {
+  background-color: hsl(var(--secondary-alt) / 80%);
 }
 
 img {
