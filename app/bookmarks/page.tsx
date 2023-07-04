@@ -6,7 +6,13 @@ export default function BookmarksPage() {
     const { title, children, icon, url } = bookmark;
     if (url) {
       return (
-        <Card key={index} title={title} cover={icon as string} url={url} />
+        <Card
+          key={index}
+          title={title}
+          cover={icon as string}
+          url={url}
+          id={title}
+        />
       );
     }
     return (
@@ -16,7 +22,13 @@ export default function BookmarksPage() {
         </h4>
         <div className="grid grid-cols-6 place-content-center place-items-center gap-7 ">
           {children?.map(({ title, icon, url }, index) => (
-            <Card key={index} cover={icon as string} url={url} title={title} />
+            <Card
+              key={index}
+              cover={icon as string}
+              url={url}
+              title={title}
+              id={title}
+            />
           ))}
         </div>
       </div>

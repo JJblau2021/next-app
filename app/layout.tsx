@@ -20,6 +20,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
+        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
       </head>
       <body>
         <Header />
