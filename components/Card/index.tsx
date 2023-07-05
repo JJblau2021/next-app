@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   title?: React.ReactNode;
@@ -16,16 +17,8 @@ export default function Card({
   id,
   type = url ? "primary" : "secondary",
 }: Props) {
-  return (
-    <a
-      href={url}
-      target="_blank"
-      className={clsx(
-        "card-btn inline-flex h-16 w-[190px] items-center rounded-2xl bg-white bg-opacity-80 p-4 shadow-md",
-        `card-bg-${type}`
-      )}
-      id={id}
-    >
+  const Content = (
+    <>
       <lord-icon
         target="a"
         style={{ width: 32, height: 32 }}
@@ -43,6 +36,33 @@ export default function Card({
         width={32}
         height={32}
       />
-    </a>
+    </>
+  );
+  if (type === "primary") {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        className={clsx(
+          "card-btn inline-flex h-16 w-[190px] items-center rounded-2xl bg-white bg-opacity-80 p-4 shadow-md",
+          `card-bg-${type}`
+        )}
+        id={id}
+      >
+        {Content}
+      </a>
+    );
+  }
+  return (
+    <Link
+      href={`/bookmarks/${id}`}
+      className={clsx(
+        "card-btn inline-flex h-16 w-[190px] items-center rounded-2xl bg-white bg-opacity-80 p-4 shadow-md",
+        `card-bg-${type}`
+      )}
+      id={id}
+    >
+      {Content}
+    </Link>
   );
 }
