@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header
       id="header"
-      className="fixed top-0 flex h-16 w-full items-center bg-white bg-opacity-0  p-4 hover:bg-opacity-80 hover:shadow-md"
+      className="fixed top-0 z-10 flex h-16 w-full items-center bg-white bg-opacity-0  p-4 hover:bg-opacity-80 hover:shadow-md"
     >
       <div className="flex items-center">
         <Image
