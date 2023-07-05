@@ -1,4 +1,4 @@
-import Card from "@/components/Card";
+import Card from "@/app/components/Card";
 import type { IndexBookmarkType } from "@/public/bookmarks";
 
 export default function BookmarkList({

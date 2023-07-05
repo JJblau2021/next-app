@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
+import Icon from "./bookmarks/components/Icon";
 
 export default function Header() {
   useEffect(() => {
@@ -38,6 +39,13 @@ export default function Header() {
         <Link href="/">Home</Link>
         <Link href="/bookmarks">Bookmarks</Link>
       </nav>
+      <a
+        className="ml-4 text-[32px]"
+        href="https://github.com/JJblau2021/next-app"
+        target="github"
+      >
+        <Icon icon="jjblau-github-fill" />
+      </a>
     </header>
   );
 }

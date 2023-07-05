@@ -21,6 +21,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+        <script src="//at.alicdn.com/t/c/font_4152893_pc5dun30as.js" />
       </head>
       <body>
         <Header />
