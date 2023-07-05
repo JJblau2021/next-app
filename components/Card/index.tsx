@@ -1,6 +1,9 @@
+"use client";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+
+const DEFAULT_COVER = "https://s1.ax1x.com/2023/07/05/pCytq6U.png";
 
 type Props = {
   title?: React.ReactNode;
@@ -31,10 +34,13 @@ export default function Card({
       </h5>
       <Image
         className="shrink-0 rounded-full"
-        src={cover || ""}
+        src={cover || DEFAULT_COVER}
         alt=""
         width={32}
         height={32}
+        onError={(e) => {
+          (e.target as HTMLImageElement).src = DEFAULT_COVER;
+        }}
       />
     </>
   );
