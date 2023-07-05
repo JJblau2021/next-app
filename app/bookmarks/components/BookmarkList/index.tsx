@@ -8,15 +8,13 @@ export default function BookmarkList({
 }) {
   const bookmarkList = bookmarks.map((bookmark) => {
     const { title, children, icon, url, index } = bookmark;
+    const gridClassName =
+      "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-content-center place-items-center gap-7 xl:grid-cols-6";
     if (url) {
       return (
-        <Card
-          key={index}
-          title={title}
-          cover={icon as string}
-          url={url}
-          id={index}
-        />
+        <div className={gridClassName} key={index}>
+          <Card title={title} cover={icon as string} url={url} id={index} />
+        </div>
       );
     }
     return (
@@ -24,7 +22,7 @@ export default function BookmarkList({
         <h4 className="mb-3 inline-block  justify-self-start rounded-sm text-xl font-semibold text-white">
           {title}
         </h4>
-        <div className="grid grid-cols-6 place-content-center place-items-center gap-7 ">
+        <div className={gridClassName}>
           {children?.map(({ title, icon, url, index }) => (
             <Card
               key={index}
