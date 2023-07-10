@@ -5,7 +5,7 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.625;
-  @apply bg-primary-main bg-opacity-40 text-primary-alt;
+  @apply bg-primary-alt bg-opacity-40 text-primary-alt;
 }
 
 body::before {
@@ -39,4 +39,10 @@ body::before {
 
 img {
   user-select: none;
+}
+
+@layer utilities {
+  .primary-link {
+    @apply text-primary-main hover:text-primary-light active:text-primary-alt;
+  }
 }

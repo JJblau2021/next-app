@@ -3,8 +3,10 @@ import type { IndexBookmarkType } from "@/public/bookmarks";
 
 export default function BookmarkList({
   bookmarks,
+  parent,
 }: {
   bookmarks: IndexBookmarkType[];
+  parent?: React.ReactNode;
 }) {
   const bookmarkList = bookmarks.map((bookmark) => {
     const { title, children, icon, url, index } = bookmark;
@@ -20,7 +22,17 @@ export default function BookmarkList({
     return (
       <div key={index} className="grid gap-2">
         <h4 className="mb-3 inline-block  justify-self-start rounded-sm text-xl font-semibold text-white">
-          {title}
+          {parent ? (
+            <>
+              {parent}
+              <span>
+                {" > "}
+                {title}
+              </span>
+            </>
+          ) : (
+            title
+          )}
         </h4>
         <div className={gridClassName}>
           {children?.map(({ title, icon, url, index }) => (
