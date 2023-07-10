@@ -1,0 +1,25 @@
+@tailwind components;
+@layer components {
+  .card {
+    --bg-card: theme(colors.white / 80%);
+    @apply inline-flex 
+      items-center rounded-2xl bg-[var(--bg-card)] p-4 shadow-md;
+  }
+  .card-btn {
+    @apply h-16 hover:bg-[var(--bg-card-hover)] active:translate-y-1 active:bg-[var(--bg-card-active)];
+  }
+  .card-bg-1 {
+    --bg-card: theme(colors.white / 80%);
+  }
+  .card-bg-2 {
+    --bg-card: theme(colors.white / 50%);
+  }
+  .card-btn-primary {
+    --bg-card-hover: theme(colors.primary.light / 80%);
+    --bg-card-active: theme(colors.primary.light);
+  }
+  .card-btn-secondary {
+    --bg-card-hover: theme(colors.secondary.light / 80%);
+    --bg-card-active: theme(colors.secondary.light);
+  }
+}

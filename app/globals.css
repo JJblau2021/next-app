@@ -1,13 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import "./components/card/index.css";
 body {
   font-family: "Poppins", sans-serif;
-  background-color: hsl(var(--primary) / 40%);
-
-  color: hsl(var(--primary));
   line-height: 1.625;
+  @apply bg-primary-main bg-opacity-40 text-primary-alt;
 }
 
 body::before {
@@ -31,61 +29,12 @@ body::before {
   display: none;
 }
 ::selection {
-  background-color: hsl(var(--primary));
-  color: #fff;
-}
-
-:root {
-  --hue: 164;
-  --primary: var(--hue) 39% 17%;
-  --primary-alt: var(--hue) 39% 37%;
-  --primary-light: var(--hue) 39% 47%;
-  --secondary-hue: 42;
-  --secondary: var(--secondary-hue) 86% 63%;
-  --secondary-alt: var(--secondary-hue) 86% 53%;
-  --secondary-light: var(--secondary-hue) 86% 63%;
-}
-
-.text-primary {
-  color: hsl(var(--primary), var(--text-opacity, 1));
+  @apply bg-primary-main text-white;
 }
 
 .main {
   background-repeat: no-repeat;
   transition: none;
-}
-
-.card {
-  @apply rounded-2xl  p-4 shadow-md;
-}
-
-.card-bg-1 {
-  @apply bg-white bg-opacity-80;
-}
-
-.card-bg-2 {
-  @apply bg-white bg-opacity-40;
-}
-
-.card-btn:active {
-  transform: translateY(2px);
-  @apply shadow-transparent;
-}
-
-.card-bg-primary:hover {
-  background-color: hsl(var(--primary-light) / 80%);
-}
-
-.card-bg-primary:active {
-  background-color: hsl(var(--primary-alt) / 80%);
-}
-
-.card-bg-secondary:hover {
-  background-color: hsl(var(--secondary-light) / 80%);
-}
-
-.card-bg-secondary:active {
-  background-color: hsl(var(--secondary-alt) / 80%);
 }
 
 img {

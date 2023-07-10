@@ -13,6 +13,11 @@ type Props = {
   type?: "primary" | "secondary";
 };
 
+const cardTypes = {
+  primary: "card-btn-primary",
+  secondary: "card-btn-secondary",
+};
+
 export default function Card({
   title,
   cover,
@@ -45,10 +50,7 @@ export default function Card({
     </>
   );
 
-  const className = clsx(
-    "card-btn inline-flex h-16 w-full items-center rounded-2xl bg-white bg-opacity-80 p-4 shadow-md min-w-[190px]",
-    `card-bg-${type}`
-  );
+  const className = clsx("card card-btn w-full min-w-[190px]", cardTypes[type]);
   if (type === "primary") {
     return (
       <a href={url} target="_blank" className={className} id={id}>

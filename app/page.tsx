@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="flex h-full items-center justify-center">
       <div className="w-[548px] text-center">
-        <div className="card card-bg-1 inline-block text-7xl font-bold uppercase leading-none">
+        <div className="card inline-block text-7xl font-bold uppercase leading-none">
           <Image
             width={432}
             height={72}
