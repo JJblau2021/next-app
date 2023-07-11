@@ -2,6 +2,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import Icon from "../Icon";
 
 const DEFAULT_COVER = "https://s1.ax1x.com/2023/07/05/pCytq6U.png";
 
@@ -27,16 +28,6 @@ export default function Card({
 }: Props) {
   const Content = (
     <>
-      <lord-icon
-        target="a"
-        style={{ width: 32, height: 32 }}
-        src={`https://cdn.lordicon.com/${url ? "pmegrqxm" : "fpmskzsv"}.json`}
-        trigger="hover"
-        colors="primary:#1a3c33"
-      />
-      <h5 className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap px-4 font-semibold">
-        {title}
-      </h5>
       <Image
         className="shrink-0 rounded-full"
         src={cover || DEFAULT_COVER}
@@ -47,6 +38,12 @@ export default function Card({
           (e.target as HTMLImageElement).src = DEFAULT_COVER;
         }}
       />
+      <h5 className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap px-4 font-semibold">
+        {title}
+      </h5>
+      <span className="text-2xl">
+        <Icon icon="send-plane-2" />
+      </span>
     </>
   );
 

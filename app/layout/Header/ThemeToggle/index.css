@@ -1,0 +1,7 @@
+.theme_icon_transition {
+  transition: opacity 250ms, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
+}
+.theme_slot_transition {
+  transition: background-color 250ms, border-color 250ms,
+    left 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
+}

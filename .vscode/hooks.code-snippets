@@ -1,0 +1,10 @@
+{
+  "Use Local State": {
+    "prefix": "uls",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useLocalState('${2:key}', ${3:defaultValue});$0"
+    ],
+    "description": "Creates a local state using the useLocalState hook"
+  }
+
+}

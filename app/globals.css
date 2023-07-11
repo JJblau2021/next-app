@@ -5,7 +5,7 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.625;
-  @apply bg-primary-alt bg-opacity-40 text-primary-alt;
+  @apply bg-primary-alt bg-opacity-40 text-primary-alt transition-[color] dark:bg-black;
 }
 
 body::before {
@@ -18,13 +18,15 @@ body::before {
   background: url(https://s1.ax1x.com/2023/06/28/pCdnQSO.png) no-repeat;
   background-position: 0 -23px;
   z-index: -1;
-  opacity: 0.8;
+  @apply opacity-80 transition dark:opacity-30;
 }
 
 * {
-  transition: all 0.3s ease;
+  transition-property: background-color, border-color, text-decoration-color,
+    fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, left;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 ::-webkit-scrollbar {
   display: none;
 }

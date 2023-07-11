@@ -13,13 +13,18 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      transitionTimingFunction: {
+        "in-shake": "cubic-bezier(.26,2,.46,.71)",
+      },
     },
     colors: {
       white: "#fff",
+      black: "#000",
       transparent: "transparent",
       current: "currentColor",
       ...themeColors,
     },
   },
+  darkMode: "class",
   plugins: [],
 };
