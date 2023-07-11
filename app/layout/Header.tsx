@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-import Icon from "./bookmarks/components/Icon";
+import Icon from "@/app/components/Icon";
 
 export default function Header() {
   useEffect(() => {

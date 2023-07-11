@@ -1,5 +1,5 @@
 import Header from "./Header";
-import "./globals.css";
+import "@/app/globals.css";
 
 export const metadata = {
   title: "JJBLAU 2021",
