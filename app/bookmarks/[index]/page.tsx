@@ -8,7 +8,10 @@ export default function Page({ params }: { params: { index: string } }) {
     <BookmarkList
       bookmarks={curBookmarks}
       parent={
-        <Link className="hover:text-primary-alt" href="/bookmarks">
+        <Link
+          className="transition hover:text-primary-alt dark:hover:text-primary-lighter"
+          href="/bookmarks"
+        >
           Bookmarks
         </Link>
       }

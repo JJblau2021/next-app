@@ -24,7 +24,7 @@ body::before {
 * {
   transition-property: background-color, border-color, text-decoration-color,
     fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, left;
-  transition-duration: 200ms;
+  transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 ::-webkit-scrollbar {
