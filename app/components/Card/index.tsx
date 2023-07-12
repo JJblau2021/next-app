@@ -42,7 +42,7 @@ export default function Card({
         {title}
       </h5>
       <span className="text-2xl">
-        <Icon icon="send-plane-2" />
+        <Icon icon={url ? "send-plane-2" : "folder-2"} />
       </span>
     </>
   );
