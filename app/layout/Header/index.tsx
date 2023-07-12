@@ -5,6 +5,10 @@ import Link from "next/link";
 import { useEffect } from "react";
 import Icon from "@/app/components/Icon";
 import ThemeToggle from "./ThemeToggle";
+import "./index.css";
+import clsx from "clsx";
+// import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   useEffect(() => {
@@ -33,35 +37,63 @@ export default function Header() {
       }
     });
   }, []);
+  const pathname = usePathname();
+
   return (
-    <header
-      id="header"
-      className="fixed top-0 z-10 flex h-16 w-full items-center bg-white bg-opacity-0 p-4 hover:bg-opacity-80 hover:shadow-2  hover:backdrop-blur-md dark:bg-quaternary-alt dark:bg-opacity-0 dark:shadow-1 dark:hover:bg-quaternary-alt dark:hover:bg-opacity-80 dark:hover:shadow-1"
-    >
-      <div className="flex items-center">
-        <Image
-          width={32}
-          height={32}
-          alt="avatar"
-          src="https://avatars.githubusercontent.com/u/84095503?v=4"
-          className="mr-4 rounded-full"
-        />
-        <Link className="text-2xl font-bold uppercase" href="/">
-          jjblau2021
-        </Link>
-      </div>
-      <nav className="ml-auto mr-4 flex gap-4">
-        <Link href="/">Home</Link>
-        <Link href="/bookmarks">Bookmarks</Link>
-      </nav>
-      <ThemeToggle />
-      <a
-        className="ml-4 text-[32px]"
-        href="https://github.com/JJblau2021/next-app"
-        target="github"
+    <>
+      <header
+        id="header"
+        className="fixed top-0 z-10 flex h-16 w-full items-center bg-white bg-opacity-0 p-4 hover:bg-opacity-80 hover:shadow-2  hover:backdrop-blur-md dark:bg-quaternary-alt dark:bg-opacity-0 dark:shadow-1 dark:hover:bg-quaternary-alt dark:hover:bg-opacity-80 dark:hover:shadow-1"
       >
-        <Icon icon="github" type="fill" />
-      </a>
-    </header>
+        <div className="mr-auto flex items-center">
+          <Image
+            width={32}
+            height={32}
+            alt="avatar"
+            src="https://avatars.githubusercontent.com/u/84095503?v=4"
+            className="mr-4 rounded-full"
+          />
+          <Link className="text-2xl font-bold uppercase" href="/">
+            jjblau2021
+          </Link>
+        </div>
+        <nav className="mr-4 hidden gap-4 sm:flex">
+          <Link href="/">Home</Link>
+          <Link href="/bookmarks">Bookmarks</Link>
+        </nav>
+        <ThemeToggle />
+        <a
+          className="ml-4 text-[32px]"
+          href="https://github.com/JJblau2021/next-app"
+          target="github"
+        >
+          <Icon icon="github" type="fill" />
+        </a>
+      </header>
+      <nav className="footer fixed bottom-4 left-4 flex justify-between gap-4 p-3 backdrop-blur-md sm:hidden">
+        <div
+          className={clsx(
+            "nav_slot",
+            pathname === "/bookmarks" && "translate-x-[44%]"
+          )}
+        ></div>
+        <Link
+          href="/"
+          className={clsx("nav_item", pathname === "/" && "active")}
+        >
+          <span>
+            <Icon icon="home" />
+          </span>
+        </Link>
+        <Link
+          href="/bookmarks"
+          className={clsx("nav_item", pathname === "/bookmarks" && "active")}
+        >
+          <span>
+            <Icon icon="book-mark" />
+          </span>
+        </Link>
+      </nav>
+    </>
   );
 }

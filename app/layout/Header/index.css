@@ -1,0 +1,19 @@
+nav.footer {
+  width: calc(100vw - 2rem);
+  @apply h-[72px] rounded-full bg-white bg-opacity-80 shadow-2 dark:bg-quaternary-alt dark:bg-opacity-80 dark:shadow-1;
+}
+
+.nav_slot {
+  @apply absolute left-[6px] top-[5px] z-[-1] block h-14 w-2/3 rounded-full bg-secondary-light bg-opacity-80 shadow-2;
+}
+
+.nav_item {
+  @apply inline-flex h-full w-1/3 place-content-center items-center text-2xl;
+}
+
+.nav_item.active {
+  @apply translate-x-1/2 translate-y-[-3px];
+}
+.nav_item:nth-child(3).active {
+  @apply translate-x-[-50%];
+}

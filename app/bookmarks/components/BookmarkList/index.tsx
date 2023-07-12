@@ -11,7 +11,7 @@ export default function BookmarkList({
   const bookmarkList = bookmarks.map((bookmark) => {
     const { title, children, icon, url, index } = bookmark;
     const gridClassName =
-      "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-content-center place-items-center gap-7 xl:grid-cols-6";
+      "grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-content-center place-items-center sm:gap-7 xl:grid-cols-6";
     if (url) {
       return (
         <div className={gridClassName} key={index}>
@@ -48,5 +48,5 @@ export default function BookmarkList({
       </div>
     );
   });
-  return <div className="grid gap-7">{bookmarkList}</div>;
+  return <div className="grid gap-7 pb-24 sm:pb-0">{bookmarkList}</div>;
 }
