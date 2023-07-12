@@ -80,7 +80,7 @@ export default function RootLayout({
           }}
         />
         <Header />
-        <main className="main h-[100vh] w-[100vw] p-3 pt-20 sm:p-20 sm:pt-24">
+        <main className="main h-full w-full p-3 pt-20 sm:p-20 sm:pt-24">
           {children}
         </main>
       </body>
