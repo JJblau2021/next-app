@@ -21,6 +21,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+        ></meta>
         {/* <script src="//at.alicdn.com/t/c/font_4152893_pc5dun30as.js" /> */}
       </head>
       <body className="dark:text-primary-lighter">
