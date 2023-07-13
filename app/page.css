@@ -1,6 +1,6 @@
 .logo {
   -webkit-text-stroke: 2px theme("colors.primary.alt");
-  @apply relative inline-block text-7xl uppercase text-transparent;
+  @apply relative inline-block select-none text-7xl uppercase text-transparent;
 }
 
 .dark .logo {
