@@ -61,7 +61,7 @@ export default function Header() {
     <>
       <header
         id="header"
-        className="fixed top-0 z-10 flex h-16 w-full items-center bg-white bg-opacity-0 p-4 hover:bg-opacity-80 hover:shadow-2  hover:backdrop-blur-sm dark:bg-quaternary-alt dark:bg-opacity-0 dark:shadow-1 dark:hover:bg-quaternary-alt dark:hover:bg-opacity-80 dark:hover:shadow-1"
+        className="fixed top-0 z-10 flex h-16 w-full items-center bg-white bg-opacity-0 p-4 hover:bg-opacity-80 hover:shadow-2  hover:backdrop-blur-sm dark:bg-quaternary-alt dark:bg-opacity-0 dark:hover:bg-quaternary-alt dark:hover:bg-opacity-80 dark:hover:shadow-1"
       >
         <div className="mr-auto flex items-center">
           <Image
