@@ -22,7 +22,7 @@ export default function Header() {
             "dark:bg-opacity-80",
             "shadow-2",
             "dark:shadow-1",
-            "backdrop-blur-md"
+            "backdrop-blur-sm"
           );
       } else {
         document
@@ -32,7 +32,7 @@ export default function Header() {
             "dark:bg-opacity-80",
             "shadow-2",
             "dark:shadow-1",
-            "backdrop-blur-md"
+            "backdrop-blur-sm"
           );
       }
     });
@@ -61,7 +61,7 @@ export default function Header() {
     <>
       <header
         id="header"
-        className="fixed top-0 z-10 flex h-16 w-full items-center bg-white bg-opacity-0 p-4 hover:bg-opacity-80 hover:shadow-2  hover:backdrop-blur-md dark:bg-quaternary-alt dark:bg-opacity-0 dark:shadow-1 dark:hover:bg-quaternary-alt dark:hover:bg-opacity-80 dark:hover:shadow-1"
+        className="fixed top-0 z-10 flex h-16 w-full items-center bg-white bg-opacity-0 p-4 hover:bg-opacity-80 hover:shadow-2  hover:backdrop-blur-sm dark:bg-quaternary-alt dark:bg-opacity-0 dark:shadow-1 dark:hover:bg-quaternary-alt dark:hover:bg-opacity-80 dark:hover:shadow-1"
       >
         <div className="mr-auto flex items-center">
           <Image
@@ -90,7 +90,7 @@ export default function Header() {
       </header>
       <nav
         className={clsx(
-          "footer fixed bottom-4 left-4 flex justify-between gap-4 p-3 backdrop-blur-md sm:hidden",
+          "footer fixed bottom-4 left-4 flex justify-between gap-4 p-3 backdrop-blur-sm sm:hidden",
           showNav || "translate-y-24"
         )}
       >

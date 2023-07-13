@@ -4,7 +4,7 @@ nav.footer {
 }
 
 .nav_slot {
-  @apply absolute left-[6px] top-[5px] z-[-1] block h-14 w-2/3 rounded-full bg-secondary-light bg-opacity-80 shadow-2;
+  @apply absolute left-[6px] top-[5px] z-[-1] block h-14 w-2/3 rounded-full bg-secondary-light bg-opacity-80 shadow-2 dark:bg-primary-main;
 }
 
 .nav_item {
