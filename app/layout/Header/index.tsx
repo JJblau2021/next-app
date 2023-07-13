@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import Icon from "@/app/components/Icon";
 import ThemeToggle from "./ThemeToggle";
 import "./index.css";
@@ -38,6 +38,24 @@ export default function Header() {
     });
   }, []);
   const pathname = usePathname();
+  const { activeNavPath, showNav } = useMemo(() => {
+    if (pathname === "/" || pathname === "/bookmarks") {
+      return {
+        showNav: true,
+        activeNavPath: pathname,
+      };
+    }
+    if (pathname.startsWith("/bookmarks")) {
+      return {
+        showNav: false,
+        activeNavPath: "/bookmarks",
+      };
+    }
+    return {
+      showNav: false,
+      activeNavPath: "/",
+    };
+  }, [pathname]);
 
   return (
     <>
@@ -70,16 +88,21 @@ export default function Header() {
           <Icon icon="github" type="fill" />
         </a>
       </header>
-      <nav className="footer fixed bottom-4 left-4 flex justify-between gap-4 p-3 backdrop-blur-md sm:hidden">
+      <nav
+        className={clsx(
+          "footer fixed bottom-4 left-4 flex justify-between gap-4 p-3 backdrop-blur-md sm:hidden",
+          showNav || "translate-y-24"
+        )}
+      >
         <div
           className={clsx(
             "nav_slot",
-            pathname.startsWith("/bookmarks") && "translate-x-[44%]"
+            activeNavPath === "/bookmarks" && "translate-x-[44%]"
           )}
         ></div>
         <Link
           href="/"
-          className={clsx("nav_item", pathname === "/" && "active")}
+          className={clsx("nav_item", activeNavPath === "/" && "active")}
           replace
         >
           <span>
@@ -91,7 +114,7 @@ export default function Header() {
           replace
           className={clsx(
             "nav_item",
-            pathname.startsWith("/bookmarks") && "active"
+            activeNavPath === "/bookmarks" && "active"
           )}
         >
           <span>
