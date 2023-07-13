@@ -11,8 +11,8 @@ body {
 body::before {
   content: "";
   background: url(https://s1.ax1x.com/2023/06/28/pCdnQSO.png) no-repeat;
-  background-position: -130px -23px;
-  background-size: auto 110%;
+  background-position: -170px -23px;
+  background-size: 300% auto;
   z-index: -1;
   @apply fixed top-0 block h-full w-full opacity-80 transition dark:opacity-30;
 }
