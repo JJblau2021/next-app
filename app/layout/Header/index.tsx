@@ -80,6 +80,7 @@ export default function Header() {
         <Link
           href="/"
           className={clsx("nav_item", pathname === "/" && "active")}
+          replace
         >
           <span>
             <Icon icon="home" />
@@ -87,6 +88,7 @@ export default function Header() {
         </Link>
         <Link
           href="/bookmarks"
+          replace
           className={clsx(
             "nav_item",
             pathname.startsWith("/bookmarks") && "active"
