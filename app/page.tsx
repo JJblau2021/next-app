@@ -4,7 +4,7 @@ import "./page.css";
 
 export default function Home() {
   return (
-    <div className="flex h-full  items-center justify-center">
+    <div className="flex h-full items-center justify-center  pt-14 sm:pt-0">
       <div className="grid justify-items-center text-center">
         <div className="card relative inline-grid text-7xl font-bold uppercase leading-none sm:inline-block">
           {/* <Image

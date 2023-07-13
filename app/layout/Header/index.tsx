@@ -74,7 +74,7 @@ export default function Header() {
         <div
           className={clsx(
             "nav_slot",
-            pathname === "/bookmarks" && "translate-x-[44%]"
+            pathname.startsWith("/bookmarks") && "translate-x-[44%]"
           )}
         ></div>
         <Link
@@ -87,7 +87,10 @@ export default function Header() {
         </Link>
         <Link
           href="/bookmarks"
-          className={clsx("nav_item", pathname === "/bookmarks" && "active")}
+          className={clsx(
+            "nav_item",
+            pathname.startsWith("/bookmarks") && "active"
+          )}
         >
           <span>
             <Icon icon="book-mark" />
