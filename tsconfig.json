@@ -24,7 +24,7 @@
     }
     
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/mdx/page.js", "app/mdx/page.jsx", "app/mdx/[[...markdownPath]]/page.js"],
   "exclude": ["node_modules"]
   
 }
