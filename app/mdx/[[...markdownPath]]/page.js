@@ -3,7 +3,8 @@ import { FileStore, stableHash } from "metro-cache";
 import { visit } from "unist-util-visit";
 import { Fragment } from "react";
 export default async function Page(props) {
-  const a = await fetchMDXContent();
+  // const a = await fetchMDXContent();
+  const a = { content: process.env.NODE_ENV };
   return (
     <div>
       {/* {JSON.stringify(props)} */}
@@ -60,17 +61,17 @@ async function fetchMDXContent(markdownPath) {
     }
   };
 
-  const evalJSCode = new Function("require", "exports", jsCode);
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  // THIS IS A BUILD-TIME EVAL. NEVER DO THIS WITH UNTRUSTED MDX (LIKE FROM CMS)!!!
-  // In this case it's okay because anyone who can edit our MDX can also edit this file.
-  evalJSCode(fakeRequire, fakeExports);
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  const reactTree = fakeExports.default({});
-  const { prepareMDX } = require("../utils/prepareMDX");
+  // const evalJSCode = new Function("require", "exports", jsCode);
+  // // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // // THIS IS A BUILD-TIME EVAL. NEVER DO THIS WITH UNTRUSTED MDX (LIKE FROM CMS)!!!
+  // // In this case it's okay because anyone who can edit our MDX can also edit this file.
+  // evalJSCode(fakeRequire, fakeExports);
+  // // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // const reactTree = fakeExports.default({});
+  // const { prepareMDX } = require("../utils/prepareMDX");
 
-  // Pre-process MDX output and serialize it.
-  let { children } = prepareMDX(reactTree.props.children);
+  // // Pre-process MDX output and serialize it.
+  // let { children } = prepareMDX(reactTree.props.children);
 
   // const children = jsCode;
   // const store = new FileStore({
