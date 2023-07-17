@@ -1,11 +1,12 @@
 import fs from "fs";
 import { FileStore, stableHash } from "metro-cache";
+import { visit } from "unist-util-visit";
 import { Fragment } from "react";
 export default async function Page(props) {
   const a = await fetchMDXContent();
   return (
     <div>
-      {JSON.stringify(props)}
+      {/* {JSON.stringify(props)} */}
       {a.content}
     </div>
   );
@@ -27,25 +28,38 @@ async function fetchMDXContent(markdownPath) {
   const mdx = fs.readFileSync(rootDir + "/dir/hello.md", "utf8");
 
   const { compile: compileMDX } = await import("@mdx-js/mdx");
-  const jsx = await compileMDX(mdx);
+  const jsx = await compileMDX(mdx, {
+    rehypePlugins: [
+      function rehypeMetaAsAttributes() {
+        return (tree) => {
+          visit(tree, "element", (node) => {
+            if (node.tagName === "code" && node.data && node.data.meta) {
+              node.properties.meta = node.data.meta;
+            }
+          });
+        };
+      },
+    ],
+  });
 
   const { transform } = require("@babel/core");
   const jsCode = await transform(jsx, {
     plugins: [require("@babel/plugin-transform-modules-commonjs")],
     presets: [require("@babel/preset-react")],
-  });
+  }).code;
 
   // Prepare environment for MDX.
   let fakeExports = {};
   const fakeRequire = (name) => {
-    if (name === "react/jsx-runtime") {
-      return require("react/jsx-runtime");
+    if (name === "react/jsx-dev-runtime") {
+      return require("react/jsx-dev-runtime");
     } else {
       // For each fake MDX import, give back the string component name.
       // It will get serialized later.
       return name;
     }
   };
+
   const evalJSCode = new Function("require", "exports", jsCode);
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // THIS IS A BUILD-TIME EVAL. NEVER DO THIS WITH UNTRUSTED MDX (LIKE FROM CMS)!!!
@@ -58,6 +72,7 @@ async function fetchMDXContent(markdownPath) {
   // Pre-process MDX output and serialize it.
   let { children } = prepareMDX(reactTree.props.children);
 
+  // const children = jsCode;
   // const store = new FileStore({
   //   root: process.cwd() + '/.cache/metro-cache',
   // })
@@ -75,7 +90,7 @@ async function fetchMDXContent(markdownPath) {
   //   console.log('Cache miss for MDX for /' + path + ' from .cache/metro-cache')
   // }
   const output = {
-    content: JSON.stringify(children),
+    content: process.env.NODE_ENV,
   };
 
   // await store.set(hash, )
