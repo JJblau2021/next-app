@@ -40,6 +40,9 @@ async function readMdxFile(pathArr?: string[]) {
     if (name === "react/jsx-dev-runtime") {
       return require("react/jsx-dev-runtime");
     }
+    if (name === "react/jsx-runtime") {
+      return require("react/jsx-runtime");
+    }
     return name;
   };
   const evalJSCode = new Function("require", "exports", jsCode);
