@@ -1,6 +1,6 @@
-const visit = require("unist-util-visit");
 const retext = require("retext");
 const smartypants = require("retext-smartypants");
+import { visit } from "unist-util-visit";
 
 function check(parent) {
   if (parent.tagName === "script") return false;
@@ -8,7 +8,7 @@ function check(parent) {
   return true;
 }
 
-module.exports = function (options) {
+export default function fn(options) {
   const processor = retext().use(smartypants, options);
 
   function transformer(tree) {
@@ -18,4 +18,4 @@ module.exports = function (options) {
   }
 
   return transformer;
-};
+}
