@@ -6,18 +6,7 @@ const unrwapImages = require("remark-unwrap-images"); // Removes <p> wrapper aro
 const smartyPants = require("./remark-smartypants"); // Cleans up typography
 const html = require("remark-html");
 
-module.exports = {
-  remarkPlugins: [
-    externalLinks,
-    customHeaders,
-    images,
-    unrwapImages,
-    smartyPants,
-  ],
-  markdownToHtml,
-};
-
-async function markdownToHtml(markdown) {
+export async function markdownToHtml(markdown) {
   const result = await remark()
     .use(externalLinks)
     .use(customHeaders)
@@ -28,3 +17,11 @@ async function markdownToHtml(markdown) {
     .process(markdown);
   return result.toString();
 }
+
+export const remarkPlugins = [
+  externalLinks,
+  customHeaders,
+  images,
+  unrwapImages,
+  smartyPants,
+];

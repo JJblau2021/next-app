@@ -1,12 +1,12 @@
 # yarn
 
-# 官网
+## 官网
 
 [https://classic.yarnpkg.com/en/docs/cli/](https://classic.yarnpkg.com/en/docs/cli/)
 
-# yarn workspace
+## yarn workspace
 
-## 如何使用 workspace
+### 如何使用 workspace
 
 根目录的 package.json 设置：
 
@@ -26,7 +26,7 @@
 
 示例：
 
-```
+```shell
 mono-demo/
 |--package.json
 |--packages/
@@ -36,29 +36,29 @@ mono-demo/
 |  |  |--package.json
 ```
 
-## workspace commands
+### workspace commands
 
-****`yarn workspace <workspace_name> <command>`** 
+**`yarn workspace <workspace_name> <command>`**
 
 在指定子包`<workspace_name>`中执行`<command>`
 
-`**yarn workspaces run <command>**`
+**`yarn workspaces run <command>`**
 
-在所有子包中执行`<command>` 
+在所有子包中执行`<command>`
 
-**********************************************************`**yarn workspaces info [--json]`** 
+**`yarn workspaces info [--json]`**
 
 查看项目中的子包依赖树
 
-********`yarn <add|remove> <package> -W`** 
+**`yarn <add|remove> <package> -W`**
 
 - `-W` : `--ignore-workspace-root-check`  允许依赖被安装在项目根目录
 
-## 子包间互相依赖
+### 子包间互相依赖
 
 子包间可能存在互相依赖的关系
 
-```
+```shell
 packages
 ├── components
 ├── shared

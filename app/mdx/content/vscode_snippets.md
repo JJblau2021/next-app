@@ -1,7 +1,5 @@
 # vscode snippets
 
-# vscode snippets
-
 To use snippets in Visual Studio Code (VSCode), follow these steps:
 
 1. Open VSCode

@@ -1,6 +1,6 @@
 # SSH 公钥
 
-# 查看已存在的公钥
+## 查看已存在的公钥
 
 ```bash
 # 进入 .ssh 文件夹
@@ -14,7 +14,7 @@ vim id_ed25519.pub
 cat id_ed25519.pub
 ```
 
-# 创建公钥
+## 创建公钥
 
 ```bash
 ssh-keygen

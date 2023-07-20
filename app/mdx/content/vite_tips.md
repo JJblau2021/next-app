@@ -1,6 +1,6 @@
 # Vite Tips
 
-# FAQ
+## FAQ
 
 1. 包引入报错
 
