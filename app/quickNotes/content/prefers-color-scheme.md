@@ -1,6 +1,6 @@
-# prefers-color-sheme
+# prefers-color-scheme
 
-## 什么是prefers-color-sheme?
+## 什么是prefers-color-scheme?
 
 2020年7月31日，W3C发布的 Media Queries Level 5 标准草案 中提到了新的属性 prefers-color-scheme，网页现在可以通过条件规则组来获取浏览器宿系统的暗色模式状态并应用了。也就是说，现在我们可以很简单地实现“暗色模式系统访问的页面是暗色的，亮色模式系统访问的页面是亮色的”。
 
@@ -32,7 +32,7 @@ no-preference: 缺省
 --bg: #FFFFFF;
 }
 
-@media(prefers-color-sheme:dark){
+@media(prefers-color-scheme:dark){
 :root {
 --bg: #000000;
 }
@@ -42,7 +42,7 @@ no-preference: 缺省
 JS 实现系统暗色模式状态获取
 
 ```jsx
-if (window.matchMedia('prefers-color-sheme:dark').matches){
+if (window.matchMedia('prefers-color-scheme:dark').matches){
 // 是暗色模式下 do something...
 }
 ```

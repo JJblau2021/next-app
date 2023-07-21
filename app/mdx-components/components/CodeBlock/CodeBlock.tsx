@@ -22,7 +22,7 @@ export default function CodeBlock({
   }
 
   return (
-    <div className="group relative">
+    <div className="group relative my-2">
       <span
         className="absolute right-1 top-1 z-10 inline-block cursor-pointer text-xl text-secondary-main opacity-0 group-hover:opacity-100 dark:text-primary-main"
         onClick={onCopyClick}

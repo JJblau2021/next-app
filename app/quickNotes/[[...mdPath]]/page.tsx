@@ -6,21 +6,55 @@ import { prepareMDX } from "../utils/prepareMDX";
 import remarkGfm from "remark-gfm";
 import remarkFrontmatter from "remark-frontmatter";
 import { remarkPlugins } from "../plugins/markdownToHtml";
-import { useMDXComponents } from "@/app/mdx-components";
+import { useMDXComponents as getMDXComponents } from "@/app/mdx-components";
+import pages from "../pages.json";
+import { H1 } from "@/app/mdx-components";
+import Icon from "@/app/components/Icon";
+import List from "./List";
+import Breadcrumb from "@/app/components/Breadcrumb";
 
 export default async function Page(props: { params: { mdPath?: string[] } }) {
-  const mdxNode = await useMdxFile(props.params?.mdPath);
+  const mdPath = props.params?.mdPath;
+  if (!mdPath || mdPath.length === 0) {
+    return (
+      <div className="mx-auto max-w-4xl rounded-2xl bg-white bg-opacity-80 p-4 dark:bg-quaternary-alt dark:bg-opacity-80">
+        <H1>Quick Notes</H1>
+        <div className="mb-3 flex gap-2 rounded-2xl bg-quaternary-lighter p-4 dark:bg-tertiary-alt">
+          <span className="text-2xl leading-none text-quaternary-main">
+            <Icon icon="book-open" />
+          </span>
+          <span>
+            <strong>写在开头：</strong>
+            闲暇时间记录下的快速笔记，点击下方链接查看
+          </span>
+        </div>
+        <List list={pages} />
+      </div>
+    );
+  }
+  const mdxNode = await getMdxFile(props.params?.mdPath);
   return (
-    <div className="mx-auto max-w-4xl rounded-2xl bg-white bg-opacity-80 p-4 dark:bg-quaternary-alt dark:opacity-80">
+    <div className="mx-auto max-w-4xl rounded-2xl bg-white bg-opacity-80 p-4 dark:bg-quaternary-alt dark:bg-opacity-80">
+      <Breadcrumb
+        items={[
+          {
+            title: "Quick Notes",
+            href: "/quickNotes",
+          },
+          {
+            title: mdPath[mdPath.length - 1],
+          },
+        ]}
+      />
       {mdxNode}
     </div>
   );
 }
 
-async function useMdxFile(pathArr?: string[]) {
-  const rootDir = process.cwd() + "/app/mdx/content";
+async function getMdxFile(pathArr?: string[]) {
+  const rootDir = process.cwd() + "/app/quickNotes/content";
   const path = (pathArr || []).join("/") || "index";
-  const mdxComponentNames = Object.keys(useMDXComponents({}));
+  const mdxComponentNames = Object.keys(getMDXComponents({}));
   let mdx;
   try {
     mdx = readFileSync(`${rootDir}/${path}.md`, "utf-8");
@@ -62,7 +96,7 @@ async function useMdxFile(pathArr?: string[]) {
   const evalJSCode = new Function("require", "exports", jsCode);
   evalJSCode(fakeRequire, fakeExports);
   const reactTree = fakeExports.default({
-    components: useMDXComponents({}),
+    components: getMDXComponents({}),
   });
   const { children } = prepareMDX(reactTree.props.children);
   return children;

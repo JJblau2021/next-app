@@ -1,6 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import CodeBlock from "./components/CodeBlock";
-import LordIcon from "../components/LordIcon";
+import Icon from "../components/Icon";
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -8,23 +8,21 @@ import LordIcon from "../components/LordIcon";
 // other libraries.
 
 // This file is required to use MDX in `app` directory.
-function H1(p: any) {
+export function H1(p: any) {
   return (
-    <h1 className="mb-8 flex items-center text-5xl font-bold">
-      <LordIcon
-        icon="vufjamqa"
-        target="h1"
-        className="mr-2 text-secondary-main dark:text-primary-light"
-      />
+    <h1 className="mb-5 grid text-3xl font-bold sm:mb-8 sm:text-5xl ">
+      <span className="text-5xl text-tertiary-lighter dark:text-tertiary-lighter sm:text-8xl">
+        <Icon icon="quill-pen" />
+      </span>
       <span>{p.children}</span>
     </h1>
   );
 }
 function H2(p: any) {
-  return <h2 className="my-4 text-2xl font-medium" {...p} />;
+  return <h2 className="my-4 text-lg font-medium sm:text-2xl" {...p} />;
 }
 function H3(p: any) {
-  return <h3 className="my-2 text-lg font-medium" {...p} />;
+  return <h3 className="my-2 text-base font-medium sm:text-lg" {...p} />;
 }
 function P(p: any) {
   return <p className="my-2" {...p} />;

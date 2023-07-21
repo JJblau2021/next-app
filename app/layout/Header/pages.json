@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Index",
+    "path": "/",
+    "icon": "home"
+  },
+  {
+    "name": "Bookmarks",
+    "path": "/bookmarks",
+    "icon": "book-mark"
+  },
+  {
+    "name": "Quick Notes",
+    "path": "/quickNotes",
+    "icon": "quill-pen"
+  }
+]

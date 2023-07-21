@@ -9,7 +9,7 @@ export default function Page({ params }: { params: { index: string } }) {
       bookmarks={curBookmarks}
       parent={
         <Link
-          className="transition hover:text-primary-alt dark:hover:text-primary-lighter"
+          className="text-white transition hover:text-secondary-light dark:hover:text-primary-light"
           href="/bookmarks"
         >
           Bookmarks

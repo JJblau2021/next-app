@@ -24,7 +24,7 @@
     }
     
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/mdx/page.js", "app/mdx/page.jsx", "app/mdx/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/quickNotes/page.js", "app/quickNotes/page.jsx", "app/quickNotes/page.tsx"],
   "exclude": ["node_modules"]
   
 }

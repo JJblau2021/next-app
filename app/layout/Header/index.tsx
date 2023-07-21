@@ -9,6 +9,7 @@ import "./index.css";
 import clsx from "clsx";
 // import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
+import pages from "./pages.json";
 
 export default function Header() {
   useEffect(() => {
@@ -38,22 +39,26 @@ export default function Header() {
     });
   }, []);
   const pathname = usePathname();
-  const { activeNavPath, showNav } = useMemo(() => {
-    if (pathname === "/" || pathname === "/bookmarks") {
+  const { activeNavPath, showNav, activeIndex } = useMemo(() => {
+    const activeIndex = pages.findIndex((page) => page.path === pathname);
+    if (activeIndex !== -1) {
       return {
         showNav: true,
         activeNavPath: pathname,
+        activeIndex,
       };
     }
     if (pathname.startsWith("/bookmarks")) {
       return {
         showNav: false,
         activeNavPath: "/bookmarks",
+        activeIndex,
       };
     }
     return {
       showNav: false,
       activeNavPath: "/",
+      activeIndex,
     };
   }, [pathname]);
 
@@ -76,8 +81,11 @@ export default function Header() {
           </Link>
         </div>
         <nav className="mr-4 hidden gap-4 sm:flex">
-          <Link href="/">Home</Link>
-          <Link href="/bookmarks">Bookmarks</Link>
+          {pages.map((page) => (
+            <Link key={page.path} href={page.path}>
+              {page.name}
+            </Link>
+          ))}
         </nav>
         <ThemeToggle />
         <a
@@ -95,32 +103,27 @@ export default function Header() {
         )}
       >
         <div
-          className={clsx(
-            "nav_slot",
-            activeNavPath === "/bookmarks" && "translate-x-[44%]"
-          )}
+          className={clsx("nav_slot")}
+          style={{
+            transform: `translateX(calc(${activeIndex * 100}% - ${
+              activeIndex * 0.375
+            }rem))`,
+          }}
         ></div>
-        <Link
-          href="/"
-          className={clsx("nav_item", activeNavPath === "/" && "active")}
-          replace
-        >
-          <span>
-            <Icon icon="home" />
-          </span>
-        </Link>
-        <Link
-          href="/bookmarks"
-          replace
-          className={clsx(
-            "nav_item",
-            activeNavPath === "/bookmarks" && "active"
-          )}
-        >
-          <span>
-            <Icon icon="book-mark" />
-          </span>
-        </Link>
+
+        {pages.map((page) => (
+          <Link
+            key={page.path}
+            href={page.path}
+            className={clsx("nav_item", {
+              active: activeNavPath === page.path,
+            })}
+          >
+            <span>
+              <Icon icon={page.icon} />
+            </span>
+          </Link>
+        ))}
       </nav>
     </>
   );

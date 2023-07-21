@@ -1,3 +1,4 @@
+import Breadcrumb from "@/app/components/Breadcrumb";
 import Card from "@/app/components/Card";
 import type { IndexBookmarkType } from "@/public/bookmarks";
 
@@ -19,21 +20,20 @@ export default function BookmarkList({
         </div>
       );
     }
+
     return (
       <div key={index} className="grid gap-2">
-        <h4 className="mb-3 inline-block  justify-self-start rounded-sm text-xl font-semibold text-white">
-          {parent ? (
-            <>
-              {parent}
-              <span>
-                {" > "}
-                {title}
-              </span>
-            </>
-          ) : (
-            title
-          )}
-        </h4>
+        {parent ? (
+          <Breadcrumb
+            items={[
+              { title: parent },
+              { title: <span className="text-white">{title}</span> },
+            ]}
+            splitIcon={<span className="text-white">{" > "}</span>}
+          />
+        ) : (
+          <h4 className="mb-3 text-xl font-semibold text-white">{title}</h4>
+        )}
         <div className={gridClassName}>
           {children?.map(({ title, icon, url, index }) => (
             <Card

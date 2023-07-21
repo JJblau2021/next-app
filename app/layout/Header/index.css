@@ -4,7 +4,7 @@ nav.footer {
 }
 
 .nav_slot {
-  @apply absolute left-[6px] top-[5px] z-[-1] block h-14 w-2/3 rounded-full bg-secondary-light bg-opacity-80 shadow-2 dark:bg-primary-main dark:bg-opacity-80;
+  @apply absolute left-[6px] top-[5px] z-[-1] block h-14 w-1/3 rounded-full bg-secondary-light bg-opacity-80 shadow-2 dark:bg-primary-main dark:bg-opacity-80;
 }
 
 .nav_item {
@@ -12,8 +12,5 @@ nav.footer {
 }
 
 .nav_item.active {
-  @apply translate-x-1/2 translate-y-[-3px];
-}
-.nav_item:nth-child(3).active {
-  @apply translate-x-[-50%];
+  @apply translate-y-[-2px];
 }

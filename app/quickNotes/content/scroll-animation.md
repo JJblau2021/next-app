@@ -1,12 +1,10 @@
 # 滚动驱动动画
 
-# 补间函数（Tween-function)
+## 补间函数（Tween-function)
 
 ---
 
 - 也有翻译成 Easing-function 缓动函数
-    
-    
 
 ```jsx
 // _c 是最终位移值 200px, b 是初始值 100px, 
@@ -26,13 +24,13 @@ function linear(t, b, _c, d) {
 
 [参考网站](https://easings.net)
 
-# 时间轴（Timeline）
+## 时间轴（Timeline）
 
 ---
 
 类似播放器的滑动条，控制动画整体播放；
 
-# 滚动驱动（ScrollDriven）
+## 滚动驱动（ScrollDriven）
 
 ---
 
