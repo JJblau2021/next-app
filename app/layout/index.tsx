@@ -21,10 +21,13 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="JJBLAU 2021" />
+        <meta property="og:url" content="https://jjblau2021.xyz" />
         <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
-        ></meta>
+          property="og:image"
+          content="https://s1.ax1x.com/2023/06/28/pCdnQSO.png"
+        />
         {/* <script src="//at.alicdn.com/t/c/font_4152893_pc5dun30as.js" /> */}
       </head>
       <body className="dark:text-primary-lighter">
