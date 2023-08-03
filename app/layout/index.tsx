@@ -28,6 +28,7 @@ export default function RootLayout({
           property="og:image"
           content="https://s1.ax1x.com/2023/06/28/pCdnQSO.png"
         />
+        <meta property="og:description" content="A personal website" />
         {/* <script src="//at.alicdn.com/t/c/font_4152893_pc5dun30as.js" /> */}
       </head>
       <body className="dark:text-primary-lighter">
