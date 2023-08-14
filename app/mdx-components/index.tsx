@@ -31,7 +31,7 @@ function OL(p: any) {
   return <ol className="my-1 font-medium" {...p} />;
 }
 function UL(p: any) {
-  return <ul className="my-1" {...p} />;
+  return <ul className="my-1 grid gap-y-1" {...p} />;
 }
 function InlineCode(p: any) {
   return (
