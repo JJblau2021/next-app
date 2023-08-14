@@ -1,5 +1,13 @@
 [
   {
+    "name": "rollup",
+    "path": "/rollup"
+  },
+  {
+    "name": "commit_styles",
+    "path": "/commit_styles"
+  },
+  {
     "name": "Event",
     "path": "/Event"
   },
