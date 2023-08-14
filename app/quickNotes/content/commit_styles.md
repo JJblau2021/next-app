@@ -120,7 +120,7 @@ module.exports = {
 
 步骤3：替换代码提交命令行，在 `package.json` 中添加代码提交脚本，使用 `pnpm commit` 代替 `git commit` 
 
-```jsx
+```json
 {
   "scripts": {
 		"commit": "cz",
