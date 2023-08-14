@@ -47,6 +47,6 @@ img {
 
 @layer utilities {
   .primary-link {
-    @apply text-primary-main hover:text-primary-light active:text-primary-alt;
+    @apply text-secondary-main hover:text-secondary-light active:text-secondary-alt dark:text-primary-light dark:hover:text-primary-lighter dark:active:text-primary-main;
   }
 }

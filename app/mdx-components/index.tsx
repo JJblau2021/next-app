@@ -41,6 +41,15 @@ function InlineCode(p: any) {
     />
   );
 }
+function A(p: any) {
+  const { children, ...rest } = p;
+  return (
+    <a className="primary-link" {...rest}>
+      {children}
+      <Icon icon="arrow-right-up" />
+    </a>
+  );
+}
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Allows customizing built-in components, e.g. to add styling.
@@ -52,6 +61,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ol: OL,
     ul: UL,
     pre: CodeBlock as any,
+    a: A,
     code: InlineCode,
     ...components,
   };

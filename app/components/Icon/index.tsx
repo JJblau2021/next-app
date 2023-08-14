@@ -1,3 +1,9 @@
+/**
+ * Icon Component
+ * @param param0 IconProps
+ * @returns JSX.Element
+ * @host https://remixicon.com/
+ */
 export default function Icon({
   icon,
   type = "line",
