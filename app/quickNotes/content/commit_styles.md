@@ -17,7 +17,7 @@
 首先安装相关依赖。
 
 ```bash
-pnpm add -D husky commitizen @commitlint/cli @cz-git @commitlint/config-conventional
+pnpm add -D husky commitizen @commitlint/cli cz-git @commitlint/config-conventional
 ```
 
 ## Git Commit 规范化模板
