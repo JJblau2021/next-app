@@ -4,6 +4,10 @@
     "path": "/rollup"
   },
   {
+    "name": "project_service",
+    "path": "/project_service"
+  },
+  {
     "name": "commit_styles",
     "path": "/commit_styles"
   },
