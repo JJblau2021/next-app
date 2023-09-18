@@ -1,78 +1,90 @@
 [
   {
-    "name": "rollup",
+    "name": "webpack 入门（一） - 从零搭建一个 webpack 项目",
+    "path": "/webpack1"
+  },
+  {
+    "name": "webpack 入门（二） - 搭建一个 React SPA 应用",
+    "path": "/webpack2"
+  },
+  {
+    "name": "安装 fish shell",
+    "path": "/fishShell"
+  },
+  {
+    "name": "rollup 使用心得",
     "path": "/rollup"
   },
   {
-    "name": "project_service",
+    "name": "项目网络请求模块",
     "path": "/project_service"
   },
   {
-    "name": "commit_styles",
+    "name": "commit 规范化",
     "path": "/commit_styles"
   },
   {
-    "name": "Event",
+    "name": "笔记 Event",
     "path": "/Event"
   },
   {
-    "name": "git-cz",
+    "name": "笔记 git-cz",
     "path": "/git-cz"
   },
   {
-    "name": "git",
+    "name": "笔记 git",
     "path": "/git"
   },
   {
-    "name": "grep",
+    "name": "笔记 grep",
     "path": "/grep"
   },
   {
-    "name": "HTML",
+    "name": "笔记 HTML",
     "path": "/HTML"
   },
   {
-    "name": "input_focus",
+    "name": "笔记 input_focus",
     "path": "/input_focus"
   },
   {
-    "name": "less",
+    "name": "笔记 less",
     "path": "/less"
   },
   {
-    "name": "npm_commands",
+    "name": "笔记 npm_commands",
     "path": "/npm_commands"
   },
   {
-    "name": "prefers-color-scheme",
+    "name": "笔记 prefers-color-scheme",
     "path": "/prefers-color-scheme"
   },
   {
-    "name": "RegExp",
+    "name": "笔记 RegExp",
     "path": "/RegExp"
   },
   {
-    "name": "scroll-animation",
+    "name": "笔记 scroll-animation",
     "path": "/scroll-animation"
   },
   {
-    "name": "SSH",
+    "name": "笔记 SSH",
     "path": "/SSH"
   },
   {
-    "name": "vim",
+    "name": "笔记 vim",
     "path": "/vim"
   },
   {
-    "name": "vite_tips",
+    "name": "笔记 vite_tips",
     "path": "/vite_tips"
   },
   {
-    "name": "vscode_snippets",
+    "name": "笔记 vscode_snippets",
     "path": "/vscode_snippets"
   },
   {
-    "name": "yarn",
+    "name": "笔记 yarn",
     "path": "/yarn"
   }
 ]
