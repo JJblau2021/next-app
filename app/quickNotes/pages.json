@@ -3,10 +3,14 @@
     "name": "webpack 入门（一） - 从零搭建一个 webpack 项目",
     "path": "/webpack1"
   },
-  {
-    "name": "webpack 入门（二） - 搭建一个 React SPA 应用",
-    "path": "/webpack2"
-  },
+{
+  "name": "webpack 入门（二） - 搭建一个 React SPA 应用",
+  "path": "/webpack2"
+},
+{
+  "name": "webpack 入门（三） - 使用 Less 开发应用样式",
+  "path": "/webpack3"
+},
   {
     "name": "安装 fish shell",
     "path": "/fishShell"
