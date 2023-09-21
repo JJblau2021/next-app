@@ -106,7 +106,7 @@ export default config;
 
 仅仅配置好 react 开发环境和入口文件，并不能在浏览器中访问，因此我们需要将 tsx 解析成浏览器能够运行的 javascript 代码，此时我们将引入 webpack 中的 loader 概念。
 
-- webpack loader 将对文件做预处理，并构建成我们需要的包括 javascript 在内的任何静态资源。
+/q
 
 为了解析 `.tsx` 文件，我们需要安装 babel-loader
 
@@ -117,14 +117,15 @@ pnpm add -D babel-loader
 pnpm add -D @babel/preset-env @babel/preset-react @babel/preset-typescript
 ```
 
-- babel 是一个语言解析器，查看[官网](https://babeljs.io/docs/presets)以获得更多说明。
-    
-    `@babel/preset-env` 是一个 Babel 插件，它根据您的目标浏览器或运行环境自动确定需要的转换和 polyfill，以便您可以使用最新的 JavaScript 语言特性而无需担心浏览器兼容性问题。
-    
-    `@babel/preset-react` 是一个 Babel 插件，它允许您使用 JSX 语法和其他与 React 相关的语言扩展。
-    
-    `@babel/preset-typescript` 是一个 Babel 插件，它允许您在 JavaScript 代码中使用 TypeScript 语法，并将其转换为普通的 JavaScript 代码。
-    
+> babel 是一个语言解析器，查看[官网](https://babeljs.io/docs/presets)以获得更多说明。
+> 
+> 
+> `@babel/preset-env` 是一个 Babel 插件，它根据您的目标浏览器或运行环境自动确定需要的转换和 polyfill，以便您可以使用最新的 JavaScript 语言特性而无需担心浏览器兼容性问题。
+> 
+> `@babel/preset-react` 是一个 Babel 插件，它允许您使用 JSX 语法和其他与 React 相关的语言扩展。
+> 
+> `@babel/preset-typescript` 是一个 Babel 插件，它允许您在 JavaScript 代码中使用 TypeScript 语法，并将其转换为普通的 JavaScript 代码。
+> 
 
 然后配置好 `babel-loader`
 
@@ -164,7 +165,8 @@ export default config;
 
 ![https://z1.ax1x.com/2023/09/18/pP4SLCt.png](https://z1.ax1x.com/2023/09/18/pP4SLCt.png)
 
-- 如图显示打包后的入口文件资源（260 kb）超过了推荐的 244 kb，可能影响性能。因此推荐分包或者使用异步导入来优化首屏资源加载。
+> 如图显示打包后的入口文件资源（260 kb）超过了推荐的 244 kb，可能影响性能。因此推荐分包或者使用异步导入来优化首屏资源加载。
+> 
 
 此时可以配置 `webpack.config.ts` 中 `devServer` 的 `client overlay`，来关闭警告弹窗
 
@@ -221,3 +223,23 @@ export default config;
 此时已经能够正常启动 React 了。
 
 ![https://z1.ax1x.com/2023/09/18/pP4SO8P.png](https://z1.ax1x.com/2023/09/18/pP4SO8P.png)
+
+### Source Map
+
+在开发过程中，我们通常会将 JavaScript 代码压缩和混淆，以便减小文件大小和保护代码。但是，这样会使得调试变得困难，因为压缩后的代码难以阅读和理解。这时候，source map 就派上用场了。
+
+source map 文件包含了编译后的代码和原始源代码之间的映射关系。当浏览器加载编译后的代码时，它会自动下载并解析 source map 文件，然后将编译后的代码映射回原始源代码，以便在浏览器中进行调试。
+
+在 webpack 中，可以通过设置 `devtool` 选项来生成 source map 文件。例如，设置 `devtool: "source-map"` 将会生成一个单独的 source map 文件。在开发环境中，使用 source map 可以方便地进行调试，定位错误和优化代码。
+
+```tsx
+const config: webpack.Configuration = {
+	// ...
+	devtool: "source-map"
+};
+
+export default config;
+```
+
+> 在[官网](https://www.webpackjs.com/configuration/devtool/#devtool)有解释到如何选择 source map 类型
+>
