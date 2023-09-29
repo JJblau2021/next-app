@@ -3,18 +3,22 @@
     "name": "webpack 入门（一） - 从零搭建一个 webpack 项目",
     "path": "/webpack1"
   },
-{
-  "name": "webpack 入门（二） - 搭建一个 React SPA 应用",
-  "path": "/webpack2"
-},
-{
-  "name": "webpack 入门（三） - 使用 Less 开发应用样式",
-  "path": "/webpack3"
-},
-{
-  "name": "使用浏览器访问本地文件夹 笔记",
-  "path": "/browser_read_dir"
-},
+  {
+    "name": "webpack 入门（二） - 搭建一个 React SPA 应用",
+    "path": "/webpack2"
+  },
+  {
+    "name": "webpack 入门（三） - 使用 Less 开发应用样式",
+    "path": "/webpack3"
+  },
+  {
+    "name": "使用浏览器访问本地文件夹 笔记",
+    "path": "/browser_read_dir"
+  },
+  {
+    "name": "chrome 浏览器学习笔记",
+    "path": "/chrome"
+  },
   {
     "name": "安装 fish shell",
     "path": "/fishShell"
