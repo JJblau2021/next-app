@@ -1,5 +1,9 @@
 [
   {
+    "name": "CSRF 跨站点脚本伪造",
+    "path": "/CSRF"
+  },
+  {
     "name": "webpack 入门（一） - 从零搭建一个 webpack 项目",
     "path": "/webpack1"
   },
@@ -11,6 +15,7 @@
     "name": "webpack 入门（三） - 使用 Less 开发应用样式",
     "path": "/webpack3"
   },
+
   {
     "name": "使用浏览器访问本地文件夹 笔记",
     "path": "/browser_read_dir"
