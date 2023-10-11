@@ -15,7 +15,18 @@
     "name": "webpack 入门（三） - 使用 Less 开发应用样式",
     "path": "/webpack3"
   },
-
+  {
+    "name": "网页性能优化（一）",
+    "path": "/WebPerformanceOptimization1"
+  },
+  {
+    "name": "网页性能优化（二）",
+    "path": "/WebPerformanceOptimization2"
+  },
+  {
+    "name": "网页性能优化（三）",
+    "path": "/WebPerformanceOptimization3"
+  },
   {
     "name": "使用浏览器访问本地文件夹 笔记",
     "path": "/browser_read_dir"
